@@ -1,74 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open App</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f2f2f2;
-            font-family: Arial;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>✨ Live Darshan | Divine Temples</title>
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .btn {
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: #28a745;
-            color: white;
-            border-radius: 10px;
-            text-decoration: none;
-            margin: 10px;
-            display: inline-block;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #f9f3e8 0%, #fff4e6 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      color: #2e241b;
+    }
 
-        .reload-btn {
-            background-color: #007bff;
-        }
-    </style>
+    .container {
+      max-width: 520px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Header Section */
+    .hero {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #b45f2b, #8b3c1c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-shadow: 0 2px 5px rgba(180, 95, 43, 0.1);
+    }
+
+    .live-badge {
+      background: #d32f2f;
+      color: white;
+      padding: 6px 18px;
+      border-radius: 60px;
+      font-size: 1rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 14px rgba(211, 47, 47, 0.25);
+      letter-spacing: 0.3px;
+      backdrop-filter: blur(2px);
+      margin: 8px 0 12px;
+      animation: softPulse 2.2s infinite;
+    }
+
+    @keyframes softPulse {
+      0% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(211, 47, 47, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+    }
+
+    .subhead {
+      color: #5f4c3b;
+      font-weight: 500;
+      font-size: 1.1rem;
+      background: rgba(255,245,235,0.7);
+      backdrop-filter: blur(8px);
+      padding: 8px 18px;
+      border-radius: 60px;
+      display: inline-block;
+      margin-top: 5px;
+      border: 1px solid rgba(230, 190, 150, 0.3);
+    }
+
+    /* Main Card */
+    .main-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 235, 215, 0.7);
+      border-radius: 42px;
+      padding: 28px 22px;
+      box-shadow: 0 25px 40px -10px rgba(100, 55, 20, 0.2),
+                  0 8px 20px rgba(0,0,0,0.05),
+                  inset 0 1px 0 rgba(255,255,255,0.8);
+      transition: transform 0.2s ease;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: #4d2e1a;
+      margin-bottom: 20px;
+      border-bottom: 2px dashed #e7cbb0;
+      padding-bottom: 14px;
+    }
+
+    .section-title i {
+      color: #c25b2a;
+      font-size: 1.7rem;
+    }
+
+    /* Temple Grid — upgraded with interactive cards */
+    .temples-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 18px 0 12px;
+    }
+
+    .temple-item {
+      background: #ffffffdd;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      padding: 14px 8px;
+      border-radius: 22px;
+      font-weight: 600;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 6px 12px rgba(150, 90, 40, 0.08);
+      border: 1px solid rgba(245, 215, 175, 0.8);
+      transition: all 0.2s ease;
+      color: #3e2a1b;
+      cursor: default;
+      transform: scale(1);
+    }
+
+    .temple-item i {
+      font-size: 1.3rem;
+      color: #b7632c;
+    }
+
+    /* hover & interactive feel */
+    .temple-item:hover {
+      background: #fff9f2;
+      border-color: #cb8b5e;
+      box-shadow: 0 12px 18px -6px rgba(180, 95, 40, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .more-temples {
+      background: linear-gradient(115deg, #f7e9dc, #faead9);
+      border: 2px dashed #b1815b;
+      color: #603a1e;
+      font-weight: 700;
+    }
+
+    .more-temples i {
+      color: #a54f1f;
+    }
+
+    .hint-message {
+      background: #fef7e9;
+      border-radius: 20px;
+      padding: 14px 18px;
+      margin: 22px 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-left: 6px solid #e07c3c;
+      font-weight: 500;
+      color: #3a2c1e;
+      backdrop-filter: blur(4px);
+      font-size: 0.95rem;
+      box-shadow: inset 0 1px 3px #fff8, 0 5px 10px rgba(0,0,0,0.02);
+    }
+
+    .hint-message i {
+      font-size: 1.7rem;
+      color: #b55a2a;
+    }
+
+    /* Buttons — modern, attractive */
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      padding: 18px 16px;
+      border: none;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.25s;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+      border: 1px solid rgba(255,255,255,0.3);
+      letter-spacing: 0.3px;
+      backdrop-filter: blur(5px);
+      color: white;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .copy-btn {
+      background: linear-gradient(145deg, #1e8e3e, #0f7a2e);
+      box-shadow: 0 10px 18px -6px #1e8e3e70, 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .copy-btn i {
+      font-size: 1.3rem;
+    }
+
+    .reload-btn {
+      background: linear-gradient(145deg, #1a73e8, #0b5dc7);
+      box-shadow: 0 10px 18px -6px #1a73e890, 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .reload-btn i {
+      font-size: 1.3rem;
+    }
+
+    .btn:hover {
+      transform: scale(1.02) translateY(-3px);
+      filter: brightness(1.05);
+      box-shadow: 0 18px 28px -8px rgba(0,0,0,0.2);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-size: 0.9rem;
+      color: #7a5e4b;
+      text-align: center;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .footer-note i {
+      color: #b45f2b;
+    }
+
+    /* Mobile responsive fine-tune */
+    @media (max-width: 420px) {
+      .container { padding: 4px; }
+      h1 { font-size: 2rem; }
+      .temples-grid { grid-template-columns: 1fr; gap: 10px; }
+      .temple-item { padding: 16px; font-size: 1.1rem; }
+      .btn { padding: 16px; font-size: 1.1rem; }
+    }
+
+    /* Additional micro-interactions */
+    .toast-message {
+      transition: opacity 0.2s;
+    }
+
+    /* Ripple effect (simulated) */
+    .btn {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Icons & spacing */
+    .fa-om, .fa-place-of-worship {
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+    }
+  </style>
 </head>
 <body>
+<div class="container">
+  <div class="hero">
+    <h1>
+      <i class="fas fa-om" style="font-size: 2.2rem; background: none; -webkit-background-clip: unset; background-clip: unset; color: #c2692e;"></i>
+      Live Darshan
+      <i class="fas fa-hands-praying" style="font-size: 2rem; background: none; -webkit-background-clip: unset; background-clip: unset; color: #b35f2a;"></i>
+    </h1>
+    <div class="live-badge">
+      <i class="fas fa-circle" style="font-size: 0.8rem;"></i> 
+      LIVE NOW · श्री दर्शन
+      <i class="fas fa-video" style="margin-left: 4px;"></i>
+    </div>
+    <div class="subhead">
+      <i class="fas fa-map-pin"></i> प्रसिद्ध मंदिर · Famous Temples
+    </div>
+  </div>
 
-    <!-- Open App Button -->
-    <a class="btn" 
-       href="https://play.google.com/store/apps/details?id=com.android.chrome"
-       target="_blank">
-       Open App 11
-    </a>
-	
-	<a href="https://rahulkjsst1027.github.io/darshan-app/darshan-app.html" target="_blank">
-   Open in Browser
-   </a>
-   <a href="#" onclick="openBrowser()">Open in Browser</a>
+  <div class="main-card">
+    <div class="section-title">
+      <i class="fas fa-temple"></i> 
+      <span>🕉️ आज के दर्शन</span>
+      <span style="margin-left: auto; font-size: 0.9rem; background: #e9d9cb; padding: 4px 12px; border-radius: 60px; color:#422f1f;"><i class="far fa-clock"></i> 24x7</span>
+    </div>
 
+    <!-- Temple grid with more attractive icons & names -->
+    <div class="temples-grid">
+      <div class="temple-item"><i class="fas fa-om"></i> Khatu Shyam</div>
+      <div class="temple-item"><i class="fas fa-om"></i> Govind Dev Ji</div>
+      <div class="temple-item"><i class="fas fa-pray"></i> Sai Baba</div>
+      <div class="temple-item"><i class="fas fa-fire"></i> Mahakal</div>
+      <div class="temple-item"><i class="fas fa-water"></i> Somnath</div>
+      <div class="temple-item"><i class="fas fa-mountain"></i> Moti Dungri</div>
+      <div class="temple-item"><i class="fas fa-tree"></i> Vrindavan</div>
+      <div class="temple-item"><i class="fas fa-dove"></i> Vittal</div>
+      <div class="temple-item"><i class="fas fa-om"></i> Omkareshwar</div>
+      <div class="temple-item more-temples"><i class="fas fa-star"></i> और प्रसिद्ध मंदिर <i class="fas fa-arrow-right"></i></div>
+    </div>
 
-    <!-- Reload Button -->
-    <button class="btn reload-btn" onclick="reloadPage()">
-        Reload Page
-    </button>
+    <!-- User friendly hint with icon -->
+    <div class="hint-message">
+      <i class="fas fa-mobile-alt"></i>
+      <span><strong>बेहतर अनुभव</strong> · ब्राउज़र में खोलें और लाइव दर्शन का आनंद लें <i class="fas fa-heart" style="color:#c95f2a; margin-left: 6px;"></i></span>
+    </div>
 
-    <script>
-	function openBrowser() {
-    var url = "https://rahulkjsst1027.github.io/darshan-app/darshan-app.html";
+    <!-- Action buttons group -->
+    <div class="btn-group">
+      <button class="btn copy-btn" id="copyLinkBtn">
+        <i class="fas fa-copy"></i> लिंक कॉपी करें
+        <i class="fas fa-external-link-alt" style="font-size: 0.9rem;"></i>
+      </button>
+      <button class="btn reload-btn" id="reloadPageBtn">
+        <i class="fas fa-sync-alt"></i> रीलोड करें
+        <i class="fas fa-redo-alt"></i>
+      </button>
+    </div>
 
-    // Try external open
-    var win = window.open(url, "_system");
+    <!-- Extra friendly footer note -->
+    <div class="footer-note">
+      <i class="fas fa-shield-alt"></i> 
+      <span>एक क्लिक · आस्था से जुड़ें</span>
+      <i class="fas fa-bell" style="margin-left: 6px;"></i>
+    </div>
+  </div>
+</div>
 
-    // fallback
-    if (!win) {
-        window.location.href = url;
+<script>
+  (function() {
+    "use strict";
+
+    // ---- Attractive interactive features with user friendly alerts ----
+    
+    // 1) Copy function with sleek alert (no default alert, we use a custom toast-like notification)
+    function showNotification(message, isSuccess = true) {
+      // Create floating notification element
+      const existingToast = document.querySelector('.custom-toast');
+      if (existingToast) existingToast.remove();
+      
+      const toast = document.createElement('div');
+      toast.className = 'custom-toast';
+      toast.setAttribute('role', 'alert');
+      toast.style.position = 'fixed';
+      toast.style.bottom = '30px';
+      toast.style.left = '50%';
+      toast.style.transform = 'translateX(-50%)';
+      toast.style.backgroundColor = isSuccess ? '#1e3c2c' : '#b33f2f';
+      toast.style.color = 'white';
+      toast.style.padding = '14px 26px';
+      toast.style.borderRadius = '80px';
+      toast.style.fontWeight = '600';
+      toast.style.fontSize = '1.1rem';
+      toast.style.boxShadow = '0 20px 35px rgba(0,0,0,0.25)';
+      toast.style.zIndex = '9999';
+      toast.style.backdropFilter = 'blur(10px)';
+      toast.style.border = '1px solid rgba(255,215,150,0.5)';
+      toast.style.display = 'flex';
+      toast.style.alignItems = 'center';
+      toast.style.gap = '12px';
+      toast.style.transition = 'opacity 0.3s';
+      toast.style.opacity = '0';
+      
+      const icon = isSuccess ? '✅' : '⚠️';
+      toast.innerHTML = `<span style="font-size:1.5rem;">${icon}</span> ${message}`;
+      
+      document.body.appendChild(toast);
+      // Trigger reflow
+      void toast.offsetWidth;
+      toast.style.opacity = '1';
+      
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => {
+          if (toast.parentNode) toast.remove();
+        }, 300);
+      }, 2700);
     }
-}
-        function reloadPage() {
-            location.reload(); // 🔄 reload current page
-        }
-    </script>
 
+    // Copy link function (updated with better UX)
+    function handleCopyLink() {
+      // This is the link to be copied (as per original design, but we can keep it)
+      const linkToCopy = "https://play.google.com/store/apps/details?id=com.android.chrome";
+      
+      // Use modern clipboard API
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(linkToCopy).then(() => {
+          showNotification('✨ लिंक कॉपी हो गया! Chrome में खोलें', true);
+        }).catch(() => {
+          // fallback
+          fallbackCopy(linkToCopy);
+        });
+      } else {
+        fallbackCopy(linkToCopy);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.top = '-100px';
+      textArea.style.left = '0';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+          showNotification('✅ लिंक कॉपी हो गया! अब Chrome खोलें', true);
+        } else {
+          showNotification('⚠️ कृपया मैन्युअल कॉपी करें', false);
+        }
+      } catch (err) {
+        showNotification('❌ कॉपी नहीं हो पाया, पुनः प्रयास करें', false);
+      }
+      document.body.removeChild(textArea);
+    }
+
+    // Reload function with animation and friendly feedback
+    function handleReload() {
+      // Visual feedback: change button style temporarily
+      const reloadBtn = document.getElementById('reloadPageBtn');
+      if (reloadBtn) {
+        reloadBtn.style.transition = 'all 0.15s';
+        reloadBtn.style.transform = 'scale(0.96)';
+        reloadBtn.style.background = 'linear-gradient(145deg, #0f5bb5, #0a4a9e)';
+        setTimeout(() => {
+          reloadBtn.style.transform = '';
+          reloadBtn.style.background = '';
+        }, 150);
+      }
+      
+      showNotification('🔄 पेज रीलोड हो रहा है... कृपया प्रतीक्षा करें', true);
+      
+      // Slight delay so user sees message
+      setTimeout(() => {
+        window.location.reload();
+      }, 400);
+    }
+
+    // Additional interactive: temple items give subtle haptic-like feeling (not real haptic but style)
+    function addTempleInteractions() {
+      const temples = document.querySelectorAll('.temple-item');
+      temples.forEach((item, index) => {
+        item.addEventListener('click', function(e) {
+          // Just a fun micro-interaction: flash background
+          this.style.transition = 'background 0.2s';
+          this.style.background = '#fbe9d2';
+          setTimeout(() => this.style.background = '', 180);
+          
+          // Show a friendly message (non-intrusive)
+          const templeName = this.innerText.trim().replace(/[🛕🕉️✨]/g,'').substring(0,25);
+          // We show a mini toast, but to avoid spam, we show only on first click of each? 
+          // but it's fun: show a small hint that darshan is being prepared
+          const smallMsg = document.createElement('div');
+          smallMsg.style.position = 'fixed';
+          smallMsg.style.bottom = '100px';
+          smallMsg.style.left = '50%';
+          smallMsg.style.transform = 'translateX(-50%)';
+          smallMsg.style.backgroundColor = '#2e241bdd';
+          smallMsg.style.color = '#ffefdb';
+          smallMsg.style.padding = '8px 20px';
+          smallMsg.style.borderRadius = '40px';
+          smallMsg.style.fontSize = '0.95rem';
+          smallMsg.style.backdropFilter = 'blur(12px)';
+          smallMsg.style.zIndex = '999';
+          smallMsg.style.border = '1px solid #e4b185';
+          smallMsg.style.fontWeight = '500';
+          smallMsg.innerText = `🛕 ${templeName} · दर्शन की तैयारी ✨`;
+          document.body.appendChild(smallMsg);
+          setTimeout(() => smallMsg.remove(), 1500);
+        });
+      });
+    }
+
+    // Initialize all
+    function init() {
+      const copyBtn = document.getElementById('copyLinkBtn');
+      const reloadBtn = document.getElementById('reloadPageBtn');
+      
+      if (copyBtn) {
+        copyBtn.addEventListener('click', handleCopyLink);
+        // Also add ripple feel
+        copyBtn.addEventListener('mousedown', () => copyBtn.style.transform = 'scale(0.97)');
+        copyBtn.addEventListener('mouseup', () => copyBtn.style.transform = '');
+        copyBtn.addEventListener('mouseleave', () => copyBtn.style.transform = '');
+      }
+      
+      if (reloadBtn) {
+        reloadBtn.addEventListener('click', handleReload);
+        reloadBtn.addEventListener('mousedown', () => reloadBtn.style.transform = 'scale(0.97)');
+        reloadBtn.addEventListener('mouseup', () => reloadBtn.style.transform = '');
+        reloadBtn.addEventListener('mouseleave', () => reloadBtn.style.transform = '');
+      }
+      
+      // Add temple interactive
+      addTempleInteractions();
+
+      // Welcome notification (friendly)
+      setTimeout(() => {
+        showNotification('🙏 स्वागतम् · Live Darshan आपके लिए', true);
+      }, 400);
+    }
+
+    // Run when DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+
+    // Also keep global functions for any legacy onclick but we override with event listeners.
+    // Ensure no conflict: remove inline onclick attributes if any (but we don't have them)
+    // Expose for potential external use
+    window.copyLink = handleCopyLink;
+    window.reloadPage = handleReload;
+    
+  })();
+</script>
+<!-- fallback for older onclick references if any, but we use listeners -->
 </body>
 </html>
-
-
