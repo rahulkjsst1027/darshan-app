@@ -34,9 +34,36 @@
     <button class="btn" onclick="openApp()">Open App</button>
 
     <script>
+        function isInAppBrowser() {
+            var ua = navigator.userAgent || navigator.vendor || window.opera;
+
+            return (
+                ua.includes("FBAN") || 
+                ua.includes("FBAV") || 
+                ua.includes("Instagram") || 
+                ua.includes("ShareChat") ||
+                ua.includes("wv") // Android WebView
+            );
+        }
+
         function openApp() {
-            // 👉 Yaha apna Play Store URL daal
-            window.location.href = "https://play.google.com/store/apps/details?id=com.android.chrome";
+            var playStoreUrl = "https://play.google.com/store/apps/details?id=com.android.chrome";
+
+            // ⚠️ In-app browser (ShareChat etc.) me direct Play Store open
+            if (isInAppBrowser()) {
+                window.location.href = playStoreUrl;
+                return;
+            }
+
+            // 🚀 Try intent (browser me fast open)
+            var intentUrl = "intent://details?id=com.android.chrome#Intent;scheme=market;package=com.android.vending;end;";
+
+            window.location.href = intentUrl;
+
+            // ⏳ Fallback (agar intent fail ho)
+            setTimeout(function () {
+                window.location.href = playStoreUrl;
+            }, 1200);
         }
     </script>
 
