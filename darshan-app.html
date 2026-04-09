@@ -19,29 +19,19 @@
             font-size: 18px;
             background-color: #28a745;
             color: white;
-            border: none;
             border-radius: 10px;
-            cursor: pointer;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-    <button class="btn" onclick="openApp()">Open App 2</button>
-
-    <script>
-        var clicked = false;
-
-        function openApp() {
-            if (clicked) return; // 🔥 double click / double redirect stop
-            clicked = true;
-
-            var url = "https://play.google.com/store/apps/details?id=com.android.chrome";
-
-            // 🔥 BEST: replace instead of href
-            window.location.replace(url);
-        }
-    </script>
+    <!-- 🔥 No JS, direct anchor -->
+    <a class="btn" 
+       href="https://play.google.com/store/apps/details?id=com.android.chrome"
+       target="_blank">
+       Open App 3
+    </a>
 
 </body>
 </html>
