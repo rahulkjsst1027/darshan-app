@@ -27,11 +27,19 @@
 </head>
 <body>
 
-    <button class="btn" onclick="openApp()">Open App 1</button>
+    <button class="btn" onclick="openApp()">Open App 2</button>
 
     <script>
+        var clicked = false;
+
         function openApp() {
-            window.location.href = "https://play.google.com/store/apps/details?id=com.android.chrome";
+            if (clicked) return; // 🔥 double click / double redirect stop
+            clicked = true;
+
+            var url = "https://play.google.com/store/apps/details?id=com.android.chrome";
+
+            // 🔥 BEST: replace instead of href
+            window.location.replace(url);
         }
     </script>
 
