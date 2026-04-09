@@ -1,12 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>✨ Live Darshan | Divine Temples</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>Live Darshan | Khatu Shyam, Mahakal, Somnath, Vrindavan - Live Mandir Darshan Online</title>
+  <meta name="description" content="India ke prasiddh mandiron ka Live Darshan dekhein - Khatu Shyam, Mahakal, Somnath, Sai Baba, Govind Dev Ji, Vrindavan aur anya. Free online darshan 24x7.">
+  <meta name="keywords" content="Live Darshan, Khatu Shyam Live, Mahakal Live Darshan, Somnath Temple Live, Sai Baba Darshan, Govind Dev Ji Live, Vrindavan Live, Vittal Temple, Omkareshwar Darshan, Moti Dungri Live, free live darshan, mandir darshan online, हिंदी में लाइव दर्शन">
+  <meta name="author" content="Live Darshan India">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="language" content="Hindi, English">
+  <meta name="geo.region" content="IN">
+  <meta name="geo.placename" content="India">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Live Darshan - Famous Temples of India">
+  <meta property="og:description" content="Watch Live Darshan of Khatu Shyam, Mahakal, Somnath, Sai Baba & more. Free online temple darshan 24x7.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/FFDAB9/8B4513?text=Live+Darshan">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Live Darshan - Famous Temples">
+  <meta name="twitter:description" content="Live darshan of Khatu Shyam, Mahakal, Somnath and more. Daily free darshan.">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.livedarshan.in/">
+  
+  <!-- Schema.org structured data for Temple / Live streaming -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Live Darshan India",
+    "url": "https://www.livedarshan.in/",
+    "description": "Live online darshan of famous Hindu temples in India - Khatu Shyam, Mahakal, Somnath, Sai Baba, Vrindavan.",
+    "inLanguage": ["hi", "en"],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.livedarshan.in/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Live Darshan Temples",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Khatu Shyam Live Darshan"},
+      {"@type": "ListItem", "position": 2, "name": "Govind Dev Ji Live"},
+      {"@type": "ListItem", "position": 3, "name": "Sai Baba Darshan"},
+      {"@type": "ListItem", "position": 4, "name": "Mahakal Live Darshan"},
+      {"@type": "ListItem", "position": 5, "name": "Somnath Temple Live"},
+      {"@type": "ListItem", "position": 6, "name": "Moti Dungri Ganesh Ji"},
+      {"@type": "ListItem", "position": 7, "name": "Vrindavan Banke Bihari"},
+      {"@type": "ListItem", "position": 8, "name": "Vittal Temple Pandharpur"},
+      {"@type": "ListItem", "position": 9, "name": "Omkareshwar Jyotirlinga"}
+    ]
+  }
+  </script>
+
   <!-- Google Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
   <style>
     * {
       margin: 0;
@@ -31,7 +94,6 @@
       margin: 0 auto;
     }
 
-    /* Header Section */
     .hero {
       text-align: center;
       margin-bottom: 24px;
@@ -50,7 +112,6 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      text-shadow: 0 2px 5px rgba(180, 95, 43, 0.1);
     }
 
     .live-badge {
@@ -64,8 +125,6 @@
       align-items: center;
       gap: 8px;
       box-shadow: 0 6px 14px rgba(211, 47, 47, 0.25);
-      letter-spacing: 0.3px;
-      backdrop-filter: blur(2px);
       margin: 8px 0 12px;
       animation: softPulse 2.2s infinite;
     }
@@ -89,7 +148,6 @@
       border: 1px solid rgba(230, 190, 150, 0.3);
     }
 
-    /* Main Card */
     .main-card {
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(15px);
@@ -98,9 +156,7 @@
       border-radius: 42px;
       padding: 28px 22px;
       box-shadow: 0 25px 40px -10px rgba(100, 55, 20, 0.2),
-                  0 8px 20px rgba(0,0,0,0.05),
-                  inset 0 1px 0 rgba(255,255,255,0.8);
-      transition: transform 0.2s ease;
+                  0 8px 20px rgba(0,0,0,0.05);
     }
 
     .section-title {
@@ -115,12 +171,6 @@
       padding-bottom: 14px;
     }
 
-    .section-title i {
-      color: #c25b2a;
-      font-size: 1.7rem;
-    }
-
-    /* Temple Grid — upgraded with interactive cards */
     .temples-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -131,7 +181,6 @@
     .temple-item {
       background: #ffffffdd;
       backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
       padding: 14px 8px;
       border-radius: 22px;
       font-weight: 600;
@@ -144,8 +193,7 @@
       border: 1px solid rgba(245, 215, 175, 0.8);
       transition: all 0.2s ease;
       color: #3e2a1b;
-      cursor: default;
-      transform: scale(1);
+      cursor: pointer;
     }
 
     .temple-item i {
@@ -153,7 +201,6 @@
       color: #b7632c;
     }
 
-    /* hover & interactive feel */
     .temple-item:hover {
       background: #fff9f2;
       border-color: #cb8b5e;
@@ -168,10 +215,6 @@
       font-weight: 700;
     }
 
-    .more-temples i {
-      color: #a54f1f;
-    }
-
     .hint-message {
       background: #fef7e9;
       border-radius: 20px;
@@ -183,17 +226,8 @@
       border-left: 6px solid #e07c3c;
       font-weight: 500;
       color: #3a2c1e;
-      backdrop-filter: blur(4px);
-      font-size: 0.95rem;
-      box-shadow: inset 0 1px 3px #fff8, 0 5px 10px rgba(0,0,0,0.02);
     }
 
-    .hint-message i {
-      font-size: 1.7rem;
-      color: #b55a2a;
-    }
-
-    /* Buttons — modern, attractive */
     .btn-group {
       display: flex;
       flex-direction: column;
@@ -213,41 +247,19 @@
       gap: 12px;
       cursor: pointer;
       transition: all 0.25s;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
-      border: 1px solid rgba(255,255,255,0.3);
-      letter-spacing: 0.3px;
-      backdrop-filter: blur(5px);
       color: white;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
 
     .copy-btn {
       background: linear-gradient(145deg, #1e8e3e, #0f7a2e);
-      box-shadow: 0 10px 18px -6px #1e8e3e70, 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .copy-btn i {
-      font-size: 1.3rem;
     }
 
     .reload-btn {
       background: linear-gradient(145deg, #1a73e8, #0b5dc7);
-      box-shadow: 0 10px 18px -6px #1a73e890, 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .reload-btn i {
-      font-size: 1.3rem;
     }
 
     .btn:hover {
       transform: scale(1.02) translateY(-3px);
-      filter: brightness(1.05);
-      box-shadow: 0 18px 28px -8px rgba(0,0,0,0.2);
-    }
-
-    .btn:active {
-      transform: scale(0.98);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     }
 
     .footer-note {
@@ -255,301 +267,176 @@
       font-size: 0.9rem;
       color: #7a5e4b;
       text-align: center;
-      font-weight: 500;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
     }
 
-    .footer-note i {
-      color: #b45f2b;
-    }
-
-    /* Mobile responsive fine-tune */
-    @media (max-width: 420px) {
-      .container { padding: 4px; }
-      h1 { font-size: 2rem; }
-      .temples-grid { grid-template-columns: 1fr; gap: 10px; }
-      .temple-item { padding: 16px; font-size: 1.1rem; }
-      .btn { padding: 16px; font-size: 1.1rem; }
-    }
-
-    /* Additional micro-interactions */
-    .toast-message {
-      transition: opacity 0.2s;
-    }
-
-    /* Ripple effect (simulated) */
-    .btn {
-      position: relative;
+    /* SEO Content - hidden visually but readable by search engines */
+    .seo-content {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
       overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
-    /* Icons & spacing */
-    .fa-om, .fa-place-of-worship {
-      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+    @media (max-width: 420px) {
+      h1 { font-size: 2rem; }
+      .temples-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+
+<!-- SEO-friendly hidden content for search engines -->
+<div class="seo-content" aria-hidden="true">
+  <h2>Live Darshan of Famous Hindu Temples in India</h2>
+  <p>Watch free live darshan online: Khatu Shyam Ji, Mahakaleshwar Jyotirlinga Ujjain, Somnath Temple Gujarat, Shirdi Sai Baba, Govind Dev Ji Jaipur, Banke Bihari Vrindavan, Vittal Pandharpur, Omkareshwar, Moti Dungri Ganesh Ji. Daily aarti and darshan timings. Best spiritual website for online temple darshan.</p>
+  <ul>
+    <li>Khatu Shyam Live Darshan Rajasthan</li>
+    <li>Mahakal Live Darshan Ujjain</li>
+    <li>Somnath Temple Live Darshan</li>
+    <li>Sai Baba Samadhi Mandir Live</li>
+    <li>Govind Dev Ji Jaipur Live Aarti</li>
+    <li>Vrindavan Banke Bihari Live</li>
+  </ul>
+</div>
+
 <div class="container">
   <div class="hero">
     <h1>
-      <i class="fas fa-om" style="font-size: 2.2rem; background: none; -webkit-background-clip: unset; background-clip: unset; color: #c2692e;"></i>
+      <i class="fas fa-om" style="color: #c2692e;"></i>
       Live Darshan
-      <i class="fas fa-hands-praying" style="font-size: 2rem; background: none; -webkit-background-clip: unset; background-clip: unset; color: #b35f2a;"></i>
+      <i class="fas fa-hands-praying" style="color: #b35f2a;"></i>
     </h1>
     <div class="live-badge">
       <i class="fas fa-circle" style="font-size: 0.8rem;"></i> 
       LIVE NOW · श्री दर्शन
-      <i class="fas fa-video" style="margin-left: 4px;"></i>
+      <i class="fas fa-video"></i>
     </div>
     <div class="subhead">
-      <i class="fas fa-map-pin"></i> प्रसिद्ध मंदिर · Famous Temples
+      <i class="fas fa-map-pin"></i> 
+      Khatu Shyam · Mahakal · Somnath · Sai Baba
     </div>
   </div>
 
   <div class="main-card">
     <div class="section-title">
       <i class="fas fa-temple"></i> 
-      <span>🕉️ आज के दर्शन</span>
-      <span style="margin-left: auto; font-size: 0.9rem; background: #e9d9cb; padding: 4px 12px; border-radius: 60px; color:#422f1f;"><i class="far fa-clock"></i> 24x7</span>
+      <span>🕉️ आज के Live दर्शन</span>
+      <span style="margin-left: auto; font-size: 0.9rem; background: #e9d9cb; padding: 4px 12px; border-radius: 60px;">
+        <i class="far fa-clock"></i> 24x7
+      </span>
     </div>
 
-    <!-- Temple grid with more attractive icons & names -->
+    <!-- Temple Grid with SEO-friendly alt-like attributes -->
     <div class="temples-grid">
-      <div class="temple-item"><i class="fas fa-om"></i> Khatu Shyam</div>
-      <div class="temple-item"><i class="fas fa-om"></i> Govind Dev Ji</div>
-      <div class="temple-item"><i class="fas fa-pray"></i> Sai Baba</div>
-      <div class="temple-item"><i class="fas fa-fire"></i> Mahakal</div>
-      <div class="temple-item"><i class="fas fa-water"></i> Somnath</div>
-      <div class="temple-item"><i class="fas fa-mountain"></i> Moti Dungri</div>
-      <div class="temple-item"><i class="fas fa-tree"></i> Vrindavan</div>
-      <div class="temple-item"><i class="fas fa-dove"></i> Vittal</div>
-      <div class="temple-item"><i class="fas fa-om"></i> Omkareshwar</div>
-      <div class="temple-item more-temples"><i class="fas fa-star"></i> और प्रसिद्ध मंदिर <i class="fas fa-arrow-right"></i></div>
+      <div class="temple-item" data-temple="Khatu Shyam"><i class="fas fa-om"></i> Khatu Shyam</div>
+      <div class="temple-item" data-temple="Govind Dev Ji"><i class="fas fa-om"></i> Govind Dev Ji</div>
+      <div class="temple-item" data-temple="Sai Baba"><i class="fas fa-pray"></i> Sai Baba</div>
+      <div class="temple-item" data-temple="Mahakal"><i class="fas fa-fire"></i> Mahakal</div>
+      <div class="temple-item" data-temple="Somnath"><i class="fas fa-water"></i> Somnath</div>
+      <div class="temple-item" data-temple="Moti Dungri"><i class="fas fa-mountain"></i> Moti Dungri</div>
+      <div class="temple-item" data-temple="Vrindavan"><i class="fas fa-tree"></i> Vrindavan</div>
+      <div class="temple-item" data-temple="Vittal"><i class="fas fa-dove"></i> Vittal</div>
+      <div class="temple-item" data-temple="Omkareshwar"><i class="fas fa-om"></i> Omkareshwar</div>
+      <div class="temple-item more-temples"><i class="fas fa-star"></i> और प्रसिद्ध मंदिर</div>
     </div>
 
-    <!-- User friendly hint with icon -->
     <div class="hint-message">
       <i class="fas fa-mobile-alt"></i>
-      <span><strong>बेहतर अनुभव</strong> · ब्राउज़र में खोलें और लाइव दर्शन का आनंद लें <i class="fas fa-heart" style="color:#c95f2a; margin-left: 6px;"></i></span>
+      <span><strong>बेहतर अनुभव के लिए</strong> · ब्राउज़र में खोलें <i class="fas fa-heart" style="color:#c95f2a;"></i></span>
     </div>
 
-    <!-- Action buttons group -->
     <div class="btn-group">
       <button class="btn copy-btn" id="copyLinkBtn">
         <i class="fas fa-copy"></i> लिंक कॉपी करें
-        <i class="fas fa-external-link-alt" style="font-size: 0.9rem;"></i>
       </button>
       <button class="btn reload-btn" id="reloadPageBtn">
         <i class="fas fa-sync-alt"></i> रीलोड करें
-        <i class="fas fa-redo-alt"></i>
       </button>
     </div>
 
-    <!-- Extra friendly footer note -->
     <div class="footer-note">
       <i class="fas fa-shield-alt"></i> 
-      <span>एक क्लिक · आस्था से जुड़ें</span>
-      <i class="fas fa-bell" style="margin-left: 6px;"></i>
+      <span>Free Live Darshan · Daily Updates</span>
     </div>
   </div>
 </div>
 
 <script>
   (function() {
-    "use strict";
-
-    // ---- Attractive interactive features with user friendly alerts ----
-    
-    // 1) Copy function with sleek alert (no default alert, we use a custom toast-like notification)
-    function showNotification(message, isSuccess = true) {
-      // Create floating notification element
-      const existingToast = document.querySelector('.custom-toast');
-      if (existingToast) existingToast.remove();
-      
+    function showNotification(msg, isSuccess = true) {
+      const existing = document.querySelector('.custom-toast');
+      if (existing) existing.remove();
       const toast = document.createElement('div');
       toast.className = 'custom-toast';
-      toast.setAttribute('role', 'alert');
-      toast.style.position = 'fixed';
-      toast.style.bottom = '30px';
-      toast.style.left = '50%';
-      toast.style.transform = 'translateX(-50%)';
-      toast.style.backgroundColor = isSuccess ? '#1e3c2c' : '#b33f2f';
-      toast.style.color = 'white';
-      toast.style.padding = '14px 26px';
-      toast.style.borderRadius = '80px';
-      toast.style.fontWeight = '600';
-      toast.style.fontSize = '1.1rem';
-      toast.style.boxShadow = '0 20px 35px rgba(0,0,0,0.25)';
-      toast.style.zIndex = '9999';
-      toast.style.backdropFilter = 'blur(10px)';
-      toast.style.border = '1px solid rgba(255,215,150,0.5)';
-      toast.style.display = 'flex';
-      toast.style.alignItems = 'center';
-      toast.style.gap = '12px';
-      toast.style.transition = 'opacity 0.3s';
-      toast.style.opacity = '0';
-      
-      const icon = isSuccess ? '✅' : '⚠️';
-      toast.innerHTML = `<span style="font-size:1.5rem;">${icon}</span> ${message}`;
-      
+      toast.style.cssText = `position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:${isSuccess?'#1e3c2c':'#b33f2f'};color:white;padding:14px 26px;border-radius:80px;font-weight:600;z-index:9999;box-shadow:0 10px 25px rgba(0,0,0,0.2);`;
+      toast.innerHTML = `${isSuccess ? '✅' : '⚠️'} ${msg}`;
       document.body.appendChild(toast);
-      // Trigger reflow
-      void toast.offsetWidth;
-      toast.style.opacity = '1';
-      
-      setTimeout(() => {
-        toast.style.opacity = '0';
-        setTimeout(() => {
-          if (toast.parentNode) toast.remove();
-        }, 300);
-      }, 2700);
+      setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 300); }, 2500);
     }
 
-    // Copy link function (updated with better UX)
-    function handleCopyLink() {
-      // This is the link to be copied (as per original design, but we can keep it)
-      const linkToCopy = "https://play.google.com/store/apps/details?id=com.android.chrome";
-      
-      // Use modern clipboard API
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(linkToCopy).then(() => {
-          showNotification('✨ लिंक कॉपी हो गया! Chrome में खोलें', true);
-        }).catch(() => {
-          // fallback
-          fallbackCopy(linkToCopy);
-        });
+    function copyLink() {
+      const link = "https://play.google.com/store/apps/details?id=com.android.chrome";
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(link).then(() => showNotification('लिंक कॉपी हो गया! Chrome में खोलें'));
       } else {
-        fallbackCopy(linkToCopy);
+        const ta = document.createElement('textarea'); ta.value = link;
+        document.body.appendChild(ta); ta.select();
+        document.execCommand('copy'); document.body.removeChild(ta);
+        showNotification('लिंक कॉपी किया गया');
       }
     }
 
-    function fallbackCopy(text) {
-      const textArea = document.createElement('textarea');
-      textArea.value = text;
-      textArea.style.position = 'fixed';
-      textArea.style.top = '-100px';
-      textArea.style.left = '0';
-      document.body.appendChild(textArea);
-      textArea.focus();
-      textArea.select();
-      try {
-        const successful = document.execCommand('copy');
-        if (successful) {
-          showNotification('✅ लिंक कॉपी हो गया! अब Chrome खोलें', true);
-        } else {
-          showNotification('⚠️ कृपया मैन्युअल कॉपी करें', false);
-        }
-      } catch (err) {
-        showNotification('❌ कॉपी नहीं हो पाया, पुनः प्रयास करें', false);
-      }
-      document.body.removeChild(textArea);
+    function reloadPage() {
+      showNotification('पेज रीलोड हो रहा है...');
+      setTimeout(() => location.reload(), 400);
     }
 
-    // Reload function with animation and friendly feedback
-    function handleReload() {
-      // Visual feedback: change button style temporarily
-      const reloadBtn = document.getElementById('reloadPageBtn');
-      if (reloadBtn) {
-        reloadBtn.style.transition = 'all 0.15s';
-        reloadBtn.style.transform = 'scale(0.96)';
-        reloadBtn.style.background = 'linear-gradient(145deg, #0f5bb5, #0a4a9e)';
-        setTimeout(() => {
-          reloadBtn.style.transform = '';
-          reloadBtn.style.background = '';
-        }, 150);
-      }
-      
-      showNotification('🔄 पेज रीलोड हो रहा है... कृपया प्रतीक्षा करें', true);
-      
-      // Slight delay so user sees message
-      setTimeout(() => {
-        window.location.reload();
-      }, 400);
-    }
+    document.getElementById('copyLinkBtn').addEventListener('click', copyLink);
+    document.getElementById('reloadPageBtn').addEventListener('click', reloadPage);
 
-    // Additional interactive: temple items give subtle haptic-like feeling (not real haptic but style)
-    function addTempleInteractions() {
-      const temples = document.querySelectorAll('.temple-item');
-      temples.forEach((item, index) => {
-        item.addEventListener('click', function(e) {
-          // Just a fun micro-interaction: flash background
-          this.style.transition = 'background 0.2s';
-          this.style.background = '#fbe9d2';
-          setTimeout(() => this.style.background = '', 180);
-          
-          // Show a friendly message (non-intrusive)
-          const templeName = this.innerText.trim().replace(/[🛕🕉️✨]/g,'').substring(0,25);
-          // We show a mini toast, but to avoid spam, we show only on first click of each? 
-          // but it's fun: show a small hint that darshan is being prepared
-          const smallMsg = document.createElement('div');
-          smallMsg.style.position = 'fixed';
-          smallMsg.style.bottom = '100px';
-          smallMsg.style.left = '50%';
-          smallMsg.style.transform = 'translateX(-50%)';
-          smallMsg.style.backgroundColor = '#2e241bdd';
-          smallMsg.style.color = '#ffefdb';
-          smallMsg.style.padding = '8px 20px';
-          smallMsg.style.borderRadius = '40px';
-          smallMsg.style.fontSize = '0.95rem';
-          smallMsg.style.backdropFilter = 'blur(12px)';
-          smallMsg.style.zIndex = '999';
-          smallMsg.style.border = '1px solid #e4b185';
-          smallMsg.style.fontWeight = '500';
-          smallMsg.innerText = `🛕 ${templeName} · दर्शन की तैयारी ✨`;
-          document.body.appendChild(smallMsg);
-          setTimeout(() => smallMsg.remove(), 1500);
-        });
+    // Temple click interaction with SEO keyword data
+    document.querySelectorAll('.temple-item').forEach(item => {
+      item.addEventListener('click', function() {
+        const name = this.getAttribute('data-temple') || this.innerText.trim();
+        const msg = document.createElement('div');
+        msg.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#2e241b;color:#ffefdb;padding:8px 20px;border-radius:40px;z-index:999;';
+        msg.innerText = `🛕 ${name} · Live Darshan Loading... ✨`;
+        document.body.appendChild(msg);
+        setTimeout(() => msg.remove(), 1500);
       });
-    }
+    });
 
-    // Initialize all
-    function init() {
-      const copyBtn = document.getElementById('copyLinkBtn');
-      const reloadBtn = document.getElementById('reloadPageBtn');
-      
-      if (copyBtn) {
-        copyBtn.addEventListener('click', handleCopyLink);
-        // Also add ripple feel
-        copyBtn.addEventListener('mousedown', () => copyBtn.style.transform = 'scale(0.97)');
-        copyBtn.addEventListener('mouseup', () => copyBtn.style.transform = '');
-        copyBtn.addEventListener('mouseleave', () => copyBtn.style.transform = '');
-      }
-      
-      if (reloadBtn) {
-        reloadBtn.addEventListener('click', handleReload);
-        reloadBtn.addEventListener('mousedown', () => reloadBtn.style.transform = 'scale(0.97)');
-        reloadBtn.addEventListener('mouseup', () => reloadBtn.style.transform = '');
-        reloadBtn.addEventListener('mouseleave', () => reloadBtn.style.transform = '');
-      }
-      
-      // Add temple interactive
-      addTempleInteractions();
-
-      // Welcome notification (friendly)
-      setTimeout(() => {
-        showNotification('🙏 स्वागतम् · Live Darshan आपके लिए', true);
-      }, 400);
-    }
-
-    // Run when DOM ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
-    } else {
-      init();
-    }
-
-    // Also keep global functions for any legacy onclick but we override with event listeners.
-    // Ensure no conflict: remove inline onclick attributes if any (but we don't have them)
-    // Expose for potential external use
-    window.copyLink = handleCopyLink;
-    window.reloadPage = handleReload;
-    
+    // Welcome notification
+    setTimeout(() => showNotification('🙏 Live Darshan · स्वागत है'), 300);
   })();
 </script>
-<!-- fallback for older onclick references if any, but we use listeners -->
+
+<!-- Additional SEO: Breadcrumb structured data (optional) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://www.livedarshan.in/"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Live Darshan Temples",
+    "item": "https://www.livedarshan.in/live-darshan"
+  }]
+}
+</script>
 </body>
 </html>
